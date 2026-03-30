@@ -4,43 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makeup Artist by Lala</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header style="text-align:center;">
-        <img src="logomuabylala.png" alt="Logo MUA by Lala" width="300px">
-        <h1>Makeup Artist by Lala</h1>
-    </header>
 
-    <nav>
-        <ul style="display:flex; justify-content:center; list-style:none; padding:0; margin:0; gap: 50px;">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="Catalog.html">Catalog</a></li>
+<body>
+    <nav class="navbar">
+        <img src="logomuabylala.png" alt="Logo MUA by Lala">
+        <h1>Makeup Artist by Lala</h1>
+        
+        <ul class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
             <li><a href="booking.html">Booking</a></li>
             <li><a href="review.html">Review</a></li> 
             <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </nav>
-    <section style="display:flex; gap:20px; padding:20px;">
-        <aside style="flex:0.5;">
-            <h4><a href="contact.html">Contact</a></h4>
-            <h4><a href="aboutus.html">About Us</a></h4>
 
+    <section class="hero">
+        <h2>Beauty Starts Here ✨</h2>
+        <p>Enhance your natural beauty with professional makeup</p>
+    </section>
+
+    <section class="search-box">
+        <input type="text" placeholder="Search makeup...">
+        <button>Search</button>
+    </section>
+
+    <section class="container">
+        <aside>
+            <h3>Filter</h3>
+            <label><input type="checkbox"> Wedding</label><br>
+            <label><input type="checkbox"> Graduation</label><br>
+            <label><input type="checkbox"> Party</label><br>
+            <label><input type="checkbox"> Engagement</label>
         </aside>
-        <main style="flex:3.5;">
+
+        <main>
             <section id="Welcome">
                 <h2>Welcome to Makeup Artist by Lala</h2>
                 <p>Makeup Artist by Lala provides professional makeup services for various special occasions such as graduation, parties, engagements, and weddings. Our goal is to enhance your natural beauty and help you look confident on your special day</p>
             </section>
             <section id="WhyChooseUs">
                  <h2>Why Choose Us?</h2>
-                 <p>💄 Experienced Makeup Artist <br> ✨ High Quality Products <br> 👰 Customized Look <br> ⏰ On Time Service</p>
+                 <p>💄 Expe rienced Makeup Artist <br> ✨ High Quality Products <br> 👰 Customized Look <br> ⏰ On Time Service</p>
             </section>
-            <section id="Portofolio" style="display:flex; flex-wrap:wrap; gap:30px;">
-                <h2 style="width:100%;">Makeup Highlight</h2>
-                 <img src="portofolio1.png" alt="Foto Makeup 1" width="250px">
-                 <img src="portofolio2.png" alt="Foto Makeup 1" width="250px">
-                 <img src="portofolio3.png" alt="Foto Makeup 1" width="250px">
-                 <img src="portofolio4.png" alt="Foto Makeup 1" width="250px">
+            <section id="Portofolio">
+                <h2>Makeup Highlight</h2>
+                <article class="card">
+                    <img src="portofolio1.png">
+                    <p>Graduation Makeup</p>
+                </article>
+                <article class="card">
+                    <img src="portofolio2.png">
+                    <p>Wedding Makeup</p>
+                </article>
+                <article class="card">
+                    <img src="portofolio3.png">
+                    <p>Engagement Makeup</p>
+                </article>
+                <article class="card">
+                    <img src="portofolio4.png">
+                    <p>Party Makeup</p>
+                </article>
+            </section>
+            <section>
+                <h2>Price List</h2>
+                <table>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Graduation</td>
+                        <td>Rp200.000</td>
+                    </tr>
+                    <tr>
+                        <td>Wedding</td>
+                        <td>Rp500.000</td>
+                    </tr>
+                    <tr>
+                        <td>Party</td>
+                        <td>Rp300.000</td>
+                    </tr>
+                </table>
             </section>
             <section id="Statistic">
                 <h2>Most Popular Makeup Look</h2>
@@ -58,9 +106,17 @@
     
         </main>
     </section>
- 
-    <footer style="text-align:center; padding:10px;">
-        <p>&copy; 2026 Makeup Artist by Lala.</p>
+        
+    <footer class="footer">
+        <section>
+            <p>Contact: muabylala@gmail.com</p>
+        </section>
+         <section>
+            <p>&copy; 2026 Makeup Artist by Lala</p>
+        </section>
+         <section>
+            <p>Instagram: @muabylalajember </p>
+        </section>
     </footer>
 </body>
 </html>
