@@ -170,4 +170,3 @@ document.addEventListener('DOMContentLoaded', () => {
     load();
     renderTabel();
 });
-x

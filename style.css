@@ -29,7 +29,7 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(180,80,100,0.08);
 }
-.navbar img {
+.navbar img {  
     width: 60px; height: 60px;
     object-fit: contain; border-radius: 50%;
     border: 2px solid var(--blush);
