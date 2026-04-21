@@ -4,67 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makeup Artist by Lala</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<div class="page-content">
     <nav class="navbar">
         <img src="logomuabylala.png" alt="Logo MUA by Lala">
         <h1>Makeup Artist by Lala</h1>
-        
         <ul class="menu">
             <li><a href="home.html">Home</a></li>
             <li><a href="catalog.html">Catalog</a></li>
             <li><a href="booking.html">Booking</a></li>
-            <li><a href="review.html">Review</a></li> 
+            <li><a href="review.html">Review</a></li>
             <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </nav>
-
     <section class="hero">
         <h2>Beauty Starts Here ✨</h2>
         <p>Enhance your natural beauty with professional makeup</p>
     </section>
-
-    <section class="search-box">
-        <input type="text" placeholder="Search makeup...">
-        <button>Search</button>
-    </section>
-
     <section class="container">
         <aside>
             <h3>Filter</h3>
-            <label><input type="checkbox"> Wedding</label><br>
-            <label><input type="checkbox"> Graduation</label><br>
-            <label><input type="checkbox"> Party</label><br>
+            <label><input type="checkbox"> Wedding</label>
+            <label><input type="checkbox"> Graduation</label>
+            <label><input type="checkbox"> Party</label>
             <label><input type="checkbox"> Engagement</label>
         </aside>
-
         <main>
             <section id="Welcome">
                 <h2>Welcome to Makeup Artist by Lala</h2>
                 <p>Makeup Artist by Lala provides professional makeup services for various special occasions such as graduation, parties, engagements, and weddings. Our goal is to enhance your natural beauty and help you look confident on your special day</p>
             </section>
             <section id="WhyChooseUs">
-                 <h2>Why Choose Us?</h2>
-                 <p>💄 Expe rienced Makeup Artist <br> ✨ High Quality Products <br> 👰 Customized Look <br> ⏰ On Time Service</p>
+                <h2>Why Choose Us?</h2>
+                <p>💄 Experienced Makeup Artist <br> ✨ High Quality Products <br> 👰 Customized Look <br> ⏰ On Time Service</p>
             </section>
             <section id="Portofolio">
                 <h2>Makeup Highlight</h2>
-                <article class="card">
-                    <img src="portofolio1.png">
-                    <p>Graduation Makeup</p>
+                <article class="card" data-kat="Graduation">
+                     <img src="portofolio1.png">
+                     <p>Graduation Makeup</p>
                 </article>
-                <article class="card">
+                <article class="card" data-kat="Wedding">
                     <img src="portofolio2.png">
                     <p>Wedding Makeup</p>
                 </article>
-                <article class="card">
+                <article class="card" data-kat="Engagement">
                     <img src="portofolio3.png">
                     <p>Engagement Makeup</p>
                 </article>
-                <article class="card">
+                <article class="card" data-kat="Party">
                     <img src="portofolio4.png">
                     <p>Party Makeup</p>
                 </article>
@@ -72,12 +63,7 @@
             <section class="price-section">
                 <h2>Price List</h2>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Service</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>Service</th><th>Price</th></tr></thead>
                     <tbody>
                         <tr><td>Graduation</td><td>Rp 200.000</td></tr>
                         <tr><td>Wedding</td><td>Rp 500.000</td></tr>
@@ -87,25 +73,136 @@
             </section>
             <section id="Statistic">
                 <h2>Most Popular Makeup Look</h2>
-                <p>Graduation</p>
-                <meter value="9" min="0" max="10" >9</meter>
-                <p>Wedding</p>
-                <meter value="8" min="0" max="10">8</meter>
-                <p>Engagement</p>
-                <meter value="8" min="0" max="10">8</meter>
-                <p>Party Makeup</p>
-                <meter value="6" min="0" max="10">6</meter>
-                <p>Daily Makeup</p>
-                <meter value="9" min="0" max="10">9</meter>
+                <p>Graduation</p><meter value="9" min="0" max="10">9</meter>
+                <p>Wedding</p><meter value="8" min="0" max="10">8</meter>
+                <p>Engagement</p><meter value="8" min="0" max="10">8</meter>
+                <p>Party Makeup</p><meter value="6" min="0" max="10">6</meter>
+                <p>Daily Makeup</p><meter value="9" min="0" max="10">9</meter>
             </section>
-    
+            <!-- INVENTORY -->
+            <section id="Inventory">
+                <h2>Manajemen Inventaris</h2>
+                <div class="inv-stats">
+                    <div class="stat-card">
+                        <div class="sc-label">Total Item</div>
+                        <div class="sc-value" id="stat-item">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="sc-label">Estimasi Nilai Stok</div>
+                        <div class="sc-value" id="stat-nilai">Rp 0</div>
+                    </div>
+                    <div class="stat-card danger">
+                        <div class="sc-label">Stok Menipis (&lt;5)</div>
+                        <div class="sc-value" id="stat-tipis">0</div>
+                    </div>
+                </div>
+                <div class="inv-topbar">
+                    <input class="inv-search" id="inv-search" type="text" placeholder="🔍 Cari nama atau kode barang...">
+                    <select class="inv-filter-select" id="inv-kat">
+                        <option value="">Semua Kategori</option>
+                        <option value="Complexion">Complexion</option>
+                        <option value="Eye Makeup">Eye Makeup</option>
+                        <option value="Lip Color">Lip Color</option>
+                        <option value="Contouring">Contouring</option>
+                        <option value="Setting & Primer">Setting &amp; Primer</option>
+                        <option value="Skincare">Skincare</option>
+                        <option value="Tools & Brush">Tools &amp; Brush</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                    <button class="btn-tambah" id="btn-tambah">+ Tambah Barang</button>
+                </div>
+                <div class="inv-table-wrap">
+                    <table id="inv-table">
+                        <thead>
+                            <tr>
+                                <th>Kode</th><th>Nama Barang</th><th>Kategori</th>
+                                <th>Stok</th><th>Harga</th><th>Tanggal Masuk</th><th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inv-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
         </main>
     </section>
-        
     <footer>
         <p>📧 muabylala@gmail.com</p>
         <p>© 2026 Makeup Artist by Lala</p>
         <p>📸 Instagram: <a href="#">@muabylalajember</a></p>
     </footer>
+</div>
+
+<div class="modal-bg" id="modal-form">
+    <div class="form-card">
+        <button class="fc-close" id="fc-close">✕</button>
+        <h3 id="form-judul">Tambah Barang</h3>
+        <div class="frow">
+            <div class="fgroup">
+                <label>Kode Barang</label>
+                <input type="text" id="f-kode" placeholder="cth: MUA-001">
+                <div class="ferr" id="ferr-kode"></div>
+            </div>
+            <div class="fgroup">
+                <label>Nama Barang</label>
+                <input type="text" id="f-nama" placeholder="cth: Foundation Shade 02">
+                <div class="ferr" id="ferr-nama"></div>
+            </div>
+        </div>
+        <div class="frow">
+            <div class="fgroup">
+                <label>Kategori</label>
+                <select id="f-kat">
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Complexion">Complexion</option>
+                    <option value="Eye Makeup">Eye Makeup</option>
+                    <option value="Lip Color">Lip Color</option>
+                    <option value="Contouring">Contouring</option>
+                    <option value="Setting & Primer">Setting & Primer</option>
+                    <option value="Skincare">Skincare</option>
+                    <option value="Tools & Brush">Tools & Brush</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+                <div class="ferr" id="ferr-kat"></div>
+            </div>
+            <div class="fgroup">
+                <label>Tanggal Masuk</label>
+                <input type="date" id="f-tgl">
+                <div class="ferr" id="ferr-tgl"></div>
+            </div>
+        </div>
+        <div class="frow">
+            <div class="fgroup">
+                <label>Stok</label>
+                <input type="number" id="f-stok" placeholder="0" min="0">
+                <div class="ferr" id="ferr-stok"></div>
+            </div>
+            <div class="fgroup">
+                <label>Harga (Rp)</label>
+                <input type="number" id="f-harga" placeholder="0" min="0">
+                <div class="ferr" id="ferr-harga"></div>
+            </div>
+        </div>
+        <div class="factions">
+            <button class="btn-cancel" id="fc-batal">Batal</button>
+            <button class="btn-save" id="fc-simpan">💾 Simpan</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal-bg" id="modal-konfirm">
+    <div class="konfirm-card">
+        <span class="kicon">🗑️</span>
+        <h3 id="konfirm-judul">Hapus barang ini?</h3>
+        <p id="konfirm-pesan">Tindakan ini tidak dapat dibatalkan.</p>
+        <div class="kactions">
+            <button class="btn-cancel" id="konfirm-batal">Batal</button>
+            <button class="btn-del-ok" id="konfirm-ok">Ya, Hapus</button>
+        </div>
+    </div>
+</div>
+
+<div class="inv-toast" id="inv-toast"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
